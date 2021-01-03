@@ -12,6 +12,7 @@ function DetailVideoPage(props) {
   const videoId = props.match.params.videoId;
   const [Video, setVideo] = useState([]);
   const [CommentLists, setCommentLists] = useState([])
+  const baseUrl = "https://youtube--clone.herokuapp.com"
 
   const videoVariable = {
     videoId: videoId,
@@ -55,7 +56,7 @@ function DetailVideoPage(props) {
           >
             <video
               style={{ width: "100%" }}
-              src={`http://localhost:5000/${Video.filePath}`}
+              src={`http://localhost:5000/${Video.filePath}` || `${baseUrl}/${Video.filePath}`}
               controls
             ></video>
                       

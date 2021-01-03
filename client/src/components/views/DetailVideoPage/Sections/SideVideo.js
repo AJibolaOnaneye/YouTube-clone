@@ -3,6 +3,7 @@ import axios from 'axios'
 
 function SideVideo() {
     const [SideVideos, setSetVideos] = useState([])
+    const baseUrl = "https://youtube--clone.herokuapp.com"
 
     useEffect(() => {
         axios.get('/api/video/getVideos')
@@ -23,7 +24,7 @@ function SideVideo() {
         return  <div style={{ display: 'flex', marginTop: '1rem', padding: '0 2rem'}}>
         <div style={{ width: '40%', marginRight: '1rem'}}>
             <a href={`/video/${video._id}`} style={{ color: 'grey'}}>
-                <img style={{ width: '100%' }} src={`http://localhost:5000/${video.thumbnail}`} alt="thimbnail" />
+                <img style={{ width: '100%' }} src={`http://localhost:5000/${video.thumbnail}`|| `${baseUrl}/${video.thumbnail}`} alt="thimbnail" />
             </a>
         </div>
 

@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 
 const { Title } = Typography
 const { TextArea } = Input
+const baseUrl = "https://youtube--clone.herokuapp.com"
 
 const Private = [
   { value: 0, label: 'Private' },
@@ -151,7 +152,7 @@ const UploadVideoPage = (props) => {
           {/*thumbnail*/}
           {Thumbnail !== "" &&
             <div>
-              <img src={`http://localhost:5000/${Thumbnail}`} alt="thumbnail" />
+              <img src={`http://localhost:5000/${Thumbnail}` || `${baseUrl}/${Thumbnail}`} alt="thumbnail" />
             </div>
           }
         </div>

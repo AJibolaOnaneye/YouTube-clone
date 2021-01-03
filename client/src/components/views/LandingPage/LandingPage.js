@@ -5,6 +5,7 @@ import moment from "moment";
 
 const { Title } = Typography;
 const { Meta } = Card;
+const baseUrl = "https://youtube--clone.herokuapp.com"
 
 function LandingPage() {
   const [Videos, setVideos] = useState([]);
@@ -34,7 +35,7 @@ function LandingPage() {
             <img
               style={{ width: "100%" }}
               alt="thumbnail"
-              src={`http://localhost:5000/${video.thumbnail}`}
+              src={`http://localhost:5000/${video.thumbnail}` || `${baseUrl}/${video.thumbnail}`}
             />
 
             <div
