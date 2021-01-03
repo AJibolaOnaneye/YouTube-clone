@@ -13,7 +13,7 @@
     "backend": "nodemon server/server.js",
     "frontend": "cd client && npm run start",
     "dev": "concurrently --kill-others-on-fail \"npm run backend\" \"npm run frontend\"",
-    "heroku-postbuild": "cd client/src && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "John ahn",
   "license": "ISC",
