@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const multer = require('multer')
 const ffmpeg = require('fluent-ffmpeg')
-const { Video } = require('../models/video')
+const { Video } = require('../models/Video')
 const {Subscriber} = require('../models/Subscriber')
 
 
