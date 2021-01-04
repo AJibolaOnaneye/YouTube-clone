@@ -12,7 +12,7 @@ function DetailVideoPage(props) {
   const videoId = props.match.params.videoId;
   const [Video, setVideo] = useState([]);
   const [CommentLists, setCommentLists] = useState([])
-  const baseUrl = process.env.PORT
+  const baseUrl = "http://youtube--clone.herokuapp.com"
 
   const videoVariable = {
     videoId: videoId,
