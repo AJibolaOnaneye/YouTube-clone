@@ -35,7 +35,7 @@ function LandingPage() {
             <img
               style={{ width: "100%" }}
               alt="thumbnail"
-              src={ `http://localhost:5000/${video.thumbnail}` }
+              src={`${baseUrl}/${video.thumbnail}` || `http://localhost:5000/${video.thumbnail}` }
             />
 
             <div
