@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 
 const { Title } = Typography
 const { TextArea } = Input
-const baseUrl = "https://youtube--clone.herokuapp.com"
+const baseUrl = process.env.PORT
 
 const Private = [
   { value: 0, label: 'Private' },

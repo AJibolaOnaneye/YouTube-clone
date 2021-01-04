@@ -1,4 +1,4 @@
-const baseUrl = "https://youtube--clone.herokuapp.com"
+const baseUrl = process.env.PORT
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function (app) {

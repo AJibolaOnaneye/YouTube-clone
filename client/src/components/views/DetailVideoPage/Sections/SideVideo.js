@@ -3,7 +3,7 @@ import axios from 'axios'
 
 function SideVideo() {
     const [SideVideos, setSetVideos] = useState([])
-    const baseUrl = "https://youtube--clone.herokuapp.com"
+    const baseUrl = process.env.PORT
 
     useEffect(() => {
         axios.get('/api/video/getVideos')
