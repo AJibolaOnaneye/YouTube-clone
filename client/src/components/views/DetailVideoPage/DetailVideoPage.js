@@ -56,7 +56,7 @@ function DetailVideoPage(props) {
           >
             <video
               style={{ width: "100%" }}
-              src={`http://localhost:5000/${Video.filePath}` || `${baseUrl}/${Video.filePath}`}
+              src={`${baseUrl}/${Video.filePath}` || `http://localhost:5000/${Video.filePath}`}
               controls
             ></video>
                       
