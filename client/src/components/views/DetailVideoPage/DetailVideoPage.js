@@ -57,7 +57,7 @@ function DetailVideoPage(props) {
             {(process.env.NODE_ENV === 'production' ? 
             <video
             style={{ width: "100%" }}
-            src={`${process.env.PORT}/${Video.filePath}`}
+            src={`${baseUrl}/${Video.filePath}`}
             controls
           ></video>
             :
