@@ -155,7 +155,8 @@ const UploadVideoPage = (props) => {
             <div>
               <img src={`${baseUrl}/${Thumbnail}`} alt="thumbnail" />
             </div>
-            : <div> 
+            :
+             <div> 
               <img src={ `http://localhost:5000/${Thumbnail}`} alt="thumbnail" />
                </div>)
           }

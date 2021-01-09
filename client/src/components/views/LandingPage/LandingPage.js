@@ -32,11 +32,24 @@ function LandingPage() {
         <Col lg={6} md={8} xs={24} key={index}>
               <div style={{ position: "relative" }}>
               <a href={`/video/${video._id}`} >
-            <img
+              {(process.env.NODE_ENV === 'production' ? 
+                <img
+                style={{ width: "100%" }}
+                alt="thumbnail"
+                src={`${baseUrl}/${video.thumbnail}` }
+              />
+                :
+                <img
+                style={{ width: "100%" }}
+                alt="thumbnail"
+                src={ `http://localhost:5000/${video.thumbnail}` }
+              />
+                )}
+            {/* <img
               style={{ width: "100%" }}
               alt="thumbnail"
               src={`${baseUrl}/${video.thumbnail}` && `http://localhost:5000/${video.thumbnail}` }
-            />
+            /> */}
 
             <div
               className="duration"
