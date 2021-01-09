@@ -23,8 +23,15 @@ function SideVideo() {
 
         return  <div style={{ display: 'flex', marginTop: '1rem', padding: '0 2rem'}}>
         <div style={{ width: '40%', marginRight: '1rem'}}>
+            
             <a href={`/video/${video._id}`} style={{ color: 'grey'}}>
-                <img style={{ width: '100%' }} src={`${baseUrl}/${video.thumbnail}` && `http://localhost:5000/${video.thumbnail}` } alt="thimbnail" />
+                
+            {(process.env.NODE_ENV === 'production' ? 
+            <img style={{ width: '100%' }} src={`${baseUrl}/${video.thumbnail}` } alt="thimbnail" />
+            :
+            <img style={{ width: '100%' }} src={ `http://localhost:5000/${video.thumbnail}` } alt="thimbnail" />
+            )}
+                {/* <img style={{ width: '100%' }} src={`${baseUrl}/${video.thumbnail}` && `http://localhost:5000/${video.thumbnail}` } alt="thimbnail" /> */}
             </a>
         </div>
 

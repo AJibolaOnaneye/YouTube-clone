@@ -2,12 +2,24 @@ const baseUrl = 'https://youtube--clone.herokuapp.com'
 const { createProxyMiddleware } = require('http-proxy-middleware');
 
 module.exports = function (app) {
-    app.use(
-        '/api',
-        createProxyMiddleware({
-            target: `http://localhost:5000` && `${baseUrl}`  ,
-            changeOrigin: true,
-        })
-    );
+    if(process.env.NODE_ENV === 'production'){
+        app.use(
+            '/api',
+            
+            createProxyMiddleware({
+                target: `${baseUrl}` ,
+                changeOrigin: true,
+            })
+        );
+
+    }else{
+        app.use(
+            '/api',
+            createProxyMiddleware({
+                target: `http://localhost:5000`   ,
+                changeOrigin: true,
+            })
+        );
+    }
 };
 

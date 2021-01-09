@@ -151,9 +151,13 @@ const UploadVideoPage = (props) => {
 
           {/*thumbnail*/}
           {Thumbnail !== "" &&
+           ( process.env.NODE_ENV === 'production' ?
             <div>
-              <img src={`${baseUrl}/${Thumbnail}` && `http://localhost:5000/${Thumbnail}`} alt="thumbnail" />
+              <img src={`${baseUrl}/${Thumbnail}`} alt="thumbnail" />
             </div>
+            : <div> 
+              <img src={ `http://localhost:5000/${Thumbnail}`} alt="thumbnail" />
+               </div>)
           }
         </div>
 

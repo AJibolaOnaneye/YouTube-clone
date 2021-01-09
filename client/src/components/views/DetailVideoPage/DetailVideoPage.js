@@ -54,11 +54,24 @@ function DetailVideoPage(props) {
             className="postPage"
             style={{ width: "100%", padding: "3rem 4em" }}
           >
+            {(process.env.NODE_ENV === 'production' ? 
             <video
+            style={{ width: "100%" }}
+            src={`${process.env.PORT}/${Video.filePath}`}
+            controls
+          ></video>
+            :
+            <video
+              style={{ width: "100%" }}
+              src={`http://localhost:5000/${Video.filePath}`}
+              controls
+            ></video>
+            )}
+            {/* <video
               style={{ width: "100%" }}
               src={`${baseUrl}/${Video.filePath}` && `http://localhost:5000/${Video.filePath}`}
               controls
-            ></video>
+            ></video> */}
                       
               
             <List.Item actions={[ 
